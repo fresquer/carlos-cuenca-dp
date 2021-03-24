@@ -1,1 +1,7 @@
-html {}
+@import "normalize.css";
+@import './_variables.css';
+@import './_global.css';
+
+html {
+    color: var(--corpo);
+}
