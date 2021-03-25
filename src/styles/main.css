@@ -1,7 +1,12 @@
 @import "normalize.css";
+@import './_typography.css';
 @import './_variables.css';
 @import './_global.css';
 
-html {
-    color: var(--corpo);
-}
+/* Components */
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/video-list-item.css';
+
+/* Pages */
+@import './pages/index.css';

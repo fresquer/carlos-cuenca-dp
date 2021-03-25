@@ -1,0 +1,281 @@
+/*
+Theme Name: Carlos Cuenca DP Child
+Theme URI: http://underscores.me/
+Template: carlos-cuenca-dp
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Tags: custom-background,custom-logo,custom-menu,featured-images,threaded-comments,translation-ready
+Version: 1.0.0.1604431339
+Updated: 2020-11-03 19:22:19
+
+*/
+
+@font-face {
+    font-family: 'Coolvetica Rg';
+    src: url('./font/CoolveticaRg-Regular.woff2') format('woff2'),
+        url('./font/CoolveticaRg-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Coolvetica Condensed Rg';
+    src: url('./font/CoolveticaCondensedRg-Regular.woff2') format('woff2'),
+        url('./font/CoolveticaCondensedRg-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --font: 'Rubik', sans-serif;
+    --font-title: 'Bebas Neue', cursive;
+    --cool: 'Coolvetica Condensed Rg', sans-serif;
+    --cool-regular: 'Coolvetica Rg', sans-serif;
+    --color: #eeeeee;
+    --hoverColor: #d8d7d7;
+    --hoverColor70: #d8d7d7b4;
+
+    --backgroundColor: #0c0c0c;
+    --videoOverlay: #0c0c0c79;
+    --navMobileBackground: #353535;
+    --animate-delay: 0.3s;
+}
+
+#page *,
+#page *::before,
+#page *::after {
+    color: var(--color);
+    /* font-family: var(--font); */
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-title);
+} */
+
+html,
+body {
+    background-color: var(--backgroundColor) !important;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+a,
+a:visited {
+    color: var(--color);
+}
+
+/* Header Styles ------------------------- */
+
+header .site-branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px 0 0;
+}
+
+header .site-branding .site-title {
+    margin: 0;
+}
+
+header .site-branding h1.site-title {
+    line-height: 1.5em;
+}
+
+header .site-branding .site-title a {
+    font-weight: bold;
+    font-size: 3.5em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--cool);
+}
+
+header .site-branding .site-description {
+    margin-top: 0px;
+    text-transform: uppercase;
+    font-family: var(--cool-regular);
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+header .site-branding .site-title a,
+header .nav-menu li a {
+    text-decoration: none;
+}
+
+header .site-branding .site-title a:visited {
+    color: inherit;
+}
+
+@media screen and (min-width: 37.5em) {
+    .main-navigation ul {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+header .nav-menu li {
+    margin: 0 16px;
+}
+
+header .nav-menu li a,
+header .nav-menu li a:visited {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity .3s ease-in;
+    font-family: var(--cool-regular);
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+header .nav-menu li a:hover {
+    opacity: .4;
+}
+
+.main-navigation.toggled ul {
+    padding: 13px 0 5px;
+    background-color: var(--navMobileBackground);
+}
+
+.main-navigation.toggled ul li {
+    margin-bottom: 12px;
+}
+
+nav .menu-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--hoverColor70);
+    border-bottom: 1px solid var(--hoverColor70);
+    padding: 10px 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav .nav-menu li {
+    text-align: center;
+}
+
+/* Header Styles ------------------------- */
+.main_content_wrapper_layout,
+.menu-menu-principal-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* Header Styles ------------------------- */
+
+.video_list_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}
+
+@media screen and (min-width: 650px) {
+    .video_list_wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+.video_item_wrapper {
+    position: relative;
+}
+
+.video_item_wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.video_item_wrapper .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--videoOverlay);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video_item_wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.video_item_wrapper .text {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'coolvetica condensed rg';
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+/* FOOTER Styles ------------------------- */
+
+footer {
+    padding: 24px 0 32px 0;
+}
+
+footer .site-info {
+    display: flex;
+    justify-content: center;
+}
+
+footer .site-info p {
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: 'coolvetica rg';
+    letter-spacing: 3px;
+}
+
+footer .rrss_wrapper img {
+    max-width: 20px;
+    margin: 0 8px;
+    opacity: .6;
+    transition: all .4s ease-in;
+}
+
+footer .rrss_wrapper img:hover {
+    opacity: .4;
+}
+
+footer .rrss_wrapper {
+    display: flex;
+    justify-content: center;
+
+}
+
+.main-navigation li {
+    /* float: left; */
+    position: relative;
+}
+
+@media screen and (min-width: 37.5em) {
+
+    .main-navigation li {
+        float: left;
+    }
+}

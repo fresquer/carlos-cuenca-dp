@@ -1,0 +1,11 @@
+.video_list_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}
+
+@media screen and (min-width: 650px) {
+    .video_list_wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

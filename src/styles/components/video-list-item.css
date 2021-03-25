@@ -1,0 +1,41 @@
+.video_item_wrapper {
+    position: relative;
+    min-height: 200px;
+
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    & .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: var(--videoOverlay);
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover .overlay {
+        opacity: 1;
+    }
+
+    & .text {
+        font-size: 16px;
+        text-align: center;
+        margin: 0;
+        font-weight: bold;
+        font-family: 'coolvetica condensed rg';
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+}
