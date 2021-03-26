@@ -1,0 +1,25 @@
+.video_detail_page_wrapper {
+    & h1 {
+        text-align: center;
+    }
+
+    & .video_wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .info_item {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .gallery_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 16px;
+
+        & img {
+            width: 100%;
+        }
+    }
+}

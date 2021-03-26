@@ -1,0 +1,18 @@
+{
+    "Main" : {
+      "videos_list" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "video" : {
+              "type" : "Link",
+              "config" : {
+                "label" : "video"
+              }
+            }
+          },
+          "label" : "Lista de videos"
+        }
+      }
+    }
+  }

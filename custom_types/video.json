@@ -1,0 +1,80 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "url"
+      }
+    },
+    "titulo" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label" : "titulo",
+        "placeholder" : "Titulo del video"
+      }
+    },
+    "video" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "video"
+      }
+    },
+    "cover" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "imagen de portada"
+      }
+    },
+    "categories" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Music videos", "Narrative", "Commercial" ],
+        "default_value" : "Music videos",
+        "label" : "Categorias"
+      }
+    },
+    "info_video" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "rol" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "rol",
+              "placeholder" : "Director"
+            }
+          },
+          "nombre" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "nombre",
+              "placeholder" : "Pepito"
+            }
+          }
+        },
+        "label" : "Info video"
+      }
+    },
+    "gallery" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "img" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "img"
+            }
+          }
+        },
+        "label" : "Galeria"
+      }
+    }
+  }
+}

@@ -4,18 +4,17 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import VideoList from "../components/video_list"
-const item = [1, 2, 3, 4, 5, 6]
 
-const IndexPage = ({ data }) => {
-  console.log("🚀 ~ file: index.js ~ line 8 ~ IndexPage ~ data", data)
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <VideoList data={data.prismicHome.data.videos_list}></VideoList>
-    </Layout>
-  )
+const CategoryPage = ({ data }) => {
+    console.log("🚀 ~ file: index.js ~ line 8 ~ CategoryPage ~ data", data)
+    return (
+        <Layout>
+            <SEO title="Category" />
+            <VideoList data={data.prismicHome.data.videos_list}></VideoList>
+        </Layout>
+    )
 }
-export default IndexPage
+export default CategoryPage
 
 
 export const query = graphql`

@@ -1,3 +1,5 @@
+const linkResolver = require('./src/utils/linkResolver')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -27,6 +29,39 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'carlos-cuenca-dp',
+        // accessToken: 'example-access-token',
+        linkResolver: () => linkResolver,
+        fetchLinks: [],
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children,
+        ) => { },
+        schemas: {
+          video: require('./custom_types/video.json'),
+          home: require('./custom_types/home.json'),
+          categories: require('./custom_types/categories.json'),
+        },
+        lang: '*',
+        prismicToolbar: true,
+        shouldDownloadImage: ({ node, key, value }) => { },
+        imageImgixParams: {
+          auto: 'compress,format',
+          fit: 'max',
+          q: 50,
+        },
+        imagePlaceholderImgixParams: {
+          w: 100,
+          blur: 15,
+          q: 50,
+        },
+      }
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-gatsby-cloud`,

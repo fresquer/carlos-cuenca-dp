@@ -1,19 +1,22 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
-const VideoListItem = ({ siteTitle }) => (
-    <div className="video_list_item_wrapper">
-        <Link to={'/video-detail-template'}>
-            <div className="video_item_wrapper">
-                <div className="img_wrapper">
-                    <img src="https://placekitten.com/600/600" alt="" srcset="" />
+const VideoListItem = ({ data }) => {
+    console.log("🚀 ~ file: video-list-item.js ~ line 5 ~ VideoListItem ~ data", data)
+    const dataVideo = data.video.document;
+    return (
+        <div className="video_list_item_wrapper">
+            <Link to={'/video/' + dataVideo.uid}>
+                <div className="video_item_wrapper">
+                    <div className="img_wrapper">
+                        <img src={dataVideo.data.cover.url} alt="" />
+                    </div>
+                    <div className="overlay">
+                        <p className="program_title">{dataVideo.data.titulo.text}</p>
+                    </div>
                 </div>
-                <div className="overlay">
-                    <p className="program_title">aaaaaaa</p>
-                </div>
-            </div>
-        </Link>
-    </div>
-)
-
+            </Link>
+        </div>
+    )
+}
 export default VideoListItem
