@@ -28,12 +28,12 @@
         "label" : "imagen de portada"
       }
     },
-    "categories" : {
-      "type" : "Select",
+    "category" : {
+      "type" : "Link",
       "config" : {
-        "options" : [ "Music videos", "Narrative", "Commercial" ],
-        "default_value" : "Music videos",
-        "label" : "Categorias"
+        "select" : "document",
+        "customtypes" : [ "categories" ],
+        "label" : "Categoria"
       }
     },
     "info_video" : {

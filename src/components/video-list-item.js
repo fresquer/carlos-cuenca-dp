@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 
 const VideoListItem = ({ data }) => {
     console.log("🚀 ~ file: video-list-item.js ~ line 5 ~ VideoListItem ~ data", data)
-    const dataVideo = data.video.document;
+    const dataVideo = data.node;
     return (
         <div className="video_list_item_wrapper">
             <Link to={'/video/' + dataVideo.uid}>

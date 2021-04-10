@@ -1,0 +1,30 @@
+.contact_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+    gap: 32px;
+    max-width: 650px;
+    margin: 0 auto;
+
+    & img {
+        width: 100%;
+    }
+
+    & p:first-child {
+        margin-top: 0;
+    }
+
+    & p {
+        font-size: 1.5em;
+    }
+
+    & .social {
+        & a {
+            margin-right: 16px;
+        }
+
+        & img {
+            width: 30px;
+        }
+    }
+}

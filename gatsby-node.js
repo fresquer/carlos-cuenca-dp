@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log("🚀 ~ file: gatsby-node.js ~ line 22 ~ result.data.allPrismicVideo.nodes.forEach ~ node", res)
     createPage({
       path: `category/${res.node.uid}`,
-      component: path.resolve(`./src/templates/video-detail-template.js`),
+      component: path.resolve(`./src/templates/category-template.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
