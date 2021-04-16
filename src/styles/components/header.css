@@ -36,6 +36,11 @@ header {
             font-size: 1.6em;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: all .4s ease;
+
+            &:hover {
+                opacity: .6;
+            }
         }
     }
 }

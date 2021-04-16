@@ -8,7 +8,7 @@ const ContactPage = ({ data }) => {
     console.log("🚀 ~ file: video-detail-template.js ~ line 8 ~ ContactPage ~ data", data)
     return (
         <Layout mainId="video_detail_page_wrapper">
-            <SEO title="Video" />
+            <SEO title={data.prismicVideo.data.titulo.text} />
             <section className="video_wrapper">
                 <div
                     id="___gatsby"
@@ -20,7 +20,7 @@ const ContactPage = ({ data }) => {
                 {
                     data.prismicVideo.data.info_video.map((item, i) =>
                     (<div className="info_item" key={i}>
-                        <p>{item.rol.text} :</p>
+                        <p>{item.rol.text}: </p>
                         <p>{item.nombre.text}</p>
                     </div>))
                 }

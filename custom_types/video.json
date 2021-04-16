@@ -1,79 +1,92 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "url"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "url"
       }
     },
-    "titulo" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label" : "titulo",
-        "placeholder" : "Titulo del video"
+    "titulo": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "titulo",
+        "placeholder": "Titulo del video"
       }
     },
-    "video" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "video"
+    "video": {
+      "type": "Text",
+      "config": {
+        "label": "video"
       }
     },
-    "cover" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "imagen de portada"
+    "cover": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "imagen de portada"
       }
     },
-    "category" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "document",
-        "customtypes" : [ "categories" ],
-        "label" : "Categoria"
+    "category": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": [
+          "categories"
+        ],
+        "label": "Categoria"
       }
     },
-    "info_video" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "rol" : {
-            "type" : "StructuredText",
-            "config" : {
-              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-              "label" : "rol",
-              "placeholder" : "Director"
+    "info_video": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "rol": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "rol",
+              "placeholder": "Director"
             }
           },
-          "nombre" : {
-            "type" : "StructuredText",
-            "config" : {
-              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-              "label" : "nombre",
-              "placeholder" : "Pepito"
+          "nombre": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "nombre",
+              "placeholder": "Pepito"
             }
           }
         },
-        "label" : "Info video"
+        "label": "Info video"
       }
     },
-    "gallery" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "img" : {
-            "type" : "Image",
-            "config" : {
-              "constraint" : { },
-              "thumbnails" : [ ],
-              "label" : "img"
+    "gallery_image_ratio": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "16:9",
+          "4:3"
+        ],
+        "default_value": "16:9",
+        "label": "Ratio de la galeria"
+      }
+    },
+    "gallery": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "img": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "img"
             }
           }
         },
-        "label" : "Galeria"
+        "label": "Galeria"
       }
     }
   }

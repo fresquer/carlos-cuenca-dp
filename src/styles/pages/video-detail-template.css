@@ -11,12 +11,28 @@
     & .info_item {
         display: flex;
         justify-content: center;
+
+        & p {
+            font-family: var(--lato);
+            margin: 16px 0;
+            font-size: 1em;
+            /* font-size: 1.2em; */
+        }
     }
 
     & .gallery_wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 16px;
+        margin: 32px 0;
+
+        @media screen and (min-width: 450px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (min-width: 650px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
 
         & img {
             width: 100%;

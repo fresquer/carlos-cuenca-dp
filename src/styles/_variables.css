@@ -3,11 +3,13 @@
     --font-title: 'Bebas Neue', cursive; */
     --cool: 'Coolvetica Condensed Rg', sans-serif;
     --cool-regular: 'Coolvetica Rg', sans-serif;
+    --lato: 'Lato', sans-serif;
     --color: #eeeeee;
     --hoverColor: #d8d7d7;
     --hoverColor70: #d8d7d7b4;
 
-    --backgroundColor: #0c0c0c;
+    /* --backgroundColor: #0c0c0c; */
+    --backgroundColor: #947a7a;
     --videoOverlay: #0c0c0c79;
     --navMobileBackground: #353535;
     --animate-delay: 0.3s;
