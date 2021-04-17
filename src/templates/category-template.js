@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import VideoList from "../components/video_list"
 
 const CategoryPage = ({ data }) => {
-  console.log("🚀 ~ file: index.js ~ line 8 ~ CategoryPage ~ data", data)
   return (
     <Layout>
       <SEO title="Category" />
