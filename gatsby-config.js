@@ -2,8 +2,8 @@ const linkResolver = require('./src/utils/linkResolver')
 
 module.exports = {
   siteMetadata: {
-    title: `Carlos Cuenca DP`,
-    description: `Carlos Cuenca · Cinematographer`,
+    title: `Carlos Cuenca Cinematographer`,
+    description: `Carlos Cuenca - Cinematographer`,
     author: `@fresquer`,
     siteUrl: "http://carloscuencadp.com"
   },

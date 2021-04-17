@@ -8,7 +8,7 @@ const ContactPage = ({ data }) => {
     console.log("🚀 ~ file: video-detail-template.js ~ line 8 ~ ContactPage ~ data", data)
     return (
         <Layout mainId="video_detail_page_wrapper">
-            <SEO title={data.prismicVideo.data.titulo.text} />
+            <SEO title={data.prismicVideo.data.titulo.text} image={data.prismicVideo.data.cover.url} />
             <section className="video_wrapper">
                 <div
                     id="html_wrapper"
@@ -60,8 +60,12 @@ export const query = graphql`
             url
             }
         }
+        cover {
+            url
+        }
         video
         }
+        
     }
     }
 `
