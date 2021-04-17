@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link, graphql, StaticQuery } from "gatsby"
 import { useWindowSize } from "../utils/windowHook"
 
+import closeimg from '../images/icons/cancel.svg'
 
 const MenuItem = ({ url, label }) => (
   <div className="menu_item">
@@ -13,13 +14,15 @@ const MenuItem = ({ url, label }) => (
 
 const MenuResponsive = ({ data, close }) => (
   <div className="menu_responsive_wrapper">
-    <p onClick={() => close()}>close</p>
     <MenuItem url="/" label="All"></MenuItem>
     {
       data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} ></MenuItem>)
     }
     <p>________</p>
     <MenuItem url="/contact" label="Contact"></MenuItem>
+    <div className="close_wrapper" onClick={() => close()}>
+      <img src={closeimg} alt="fadf" />
+    </div>
   </div>
 )
 
@@ -54,7 +57,7 @@ const HeaderBlock = ({ data }) => {
 
           <MenuItem url="/contact" label="Contact"></MenuItem>
         </div> : stateMenuRes ? <MenuResponsive data={data} close={() => setStateMenuRes(false)}></MenuResponsive>
-          : (<p onClick={() => setStateMenuRes(true)}>open</p>)
+          : (<p className="menu_button" onClick={() => setStateMenuRes(true)}>menu</p>)
       }
     </header>
   )
