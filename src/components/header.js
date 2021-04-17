@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Link, graphql, StaticQuery } from "gatsby"
+import { useWindowSize } from "../utils/windowHook"
+
 
 const MenuItem = ({ url, label }) => (
   <div className="menu_item">
@@ -9,7 +11,31 @@ const MenuItem = ({ url, label }) => (
   </div>
 )
 
+const MenuResponsive = ({ data, close }) => (
+  <div className="menu_responsive_wrapper">
+    <p onClick={() => close()}>close</p>
+    <MenuItem url="/" label="All"></MenuItem>
+    {
+      data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} ></MenuItem>)
+    }
+    <p>________</p>
+    <MenuItem url="/contact" label="Contact"></MenuItem>
+  </div>
+)
+
 const HeaderBlock = ({ data }) => {
+  const [stateMenuRes, setStateMenuRes] = React.useState(false)
+  const [isResponsive, setIsResponsive] = React.useState(false)
+  const windowWitdh = useWindowSize()
+
+  React.useEffect(() => {
+    handleWindowWidthChange(windowWitdh.width);
+  })
+
+  const handleWindowWidthChange = size => {
+    size < 600 ? setIsResponsive(true) : setIsResponsive(false);
+  }
+
   return (
     <header>
       <div className="title_wrapper">
@@ -18,14 +44,18 @@ const HeaderBlock = ({ data }) => {
           <h2>CINEMATOGRAPHER</h2>
         </Link>
       </div>
-      <div className="menu_wrapper">
-        <MenuItem url="/" label="All"></MenuItem>
-        {
-          data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} ></MenuItem>)
-        }
-        <p>|</p>
-        <MenuItem url="/contact" label="Contact"></MenuItem>
-      </div>
+      {
+        !isResponsive ? <div className="menu_wrapper">
+          <MenuItem url="/" label="All"></MenuItem>
+          {
+            data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} ></MenuItem>)
+          }
+          <p>|</p>
+
+          <MenuItem url="/contact" label="Contact"></MenuItem>
+        </div> : stateMenuRes ? <MenuResponsive data={data} close={() => setStateMenuRes(false)}></MenuResponsive>
+          : (<p onClick={() => setStateMenuRes(true)}>open</p>)
+      }
     </header>
   )
 }

@@ -11,7 +11,7 @@ const ContactPage = ({ data }) => {
             <SEO title={data.prismicVideo.data.titulo.text} />
             <section className="video_wrapper">
                 <div
-                    id="___gatsby"
+                    id="html_wrapper"
                     dangerouslySetInnerHTML={{ __html: data.prismicVideo.data.video }}
                 />
             </section>

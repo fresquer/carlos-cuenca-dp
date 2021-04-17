@@ -1,5 +1,6 @@
 import * as React from "react"
 // import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import carlos from '../images/carlos-photo.jpeg'
 import insta from '../images/icons/instagram.svg'
@@ -12,7 +13,13 @@ const ContactPage = () => (
     <Layout>
         <SEO title="Contact" />
         <div className="contact_wrapper">
-            <img src={carlos} alt="Carlos Cuenca WIP" />
+            <StaticImage
+                src="../images/carlos-photo.jpeg"
+                quality={95}
+                formats={["AUTO", "WEBP", "AVIF"]}
+                placeholder="blurred"
+                alt="Carlos on camera"
+            />
             <div className="info_wrapper">
                 <p>
                     <a href="mailto:carloscuencadp@gmail.com">carloscuencadp@gmail.com</a>
