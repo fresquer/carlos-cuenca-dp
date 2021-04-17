@@ -3,6 +3,7 @@ import { Link, graphql, StaticQuery } from "gatsby"
 import { useWindowSize } from "../utils/windowHook"
 
 import closeimg from '../images/icons/cancel.svg'
+import useScrollBlock from "../utils/useScrollBlock"
 
 const MenuItem = ({ url, label }) => (
   <div className="menu_item">
@@ -29,6 +30,8 @@ const MenuResponsive = ({ data, close }) => (
 const HeaderBlock = ({ data }) => {
   const [stateMenuRes, setStateMenuRes] = React.useState(false)
   const [isResponsive, setIsResponsive] = React.useState(false)
+  const [blockScroll, allowScroll] = useScrollBlock();
+
   const windowWitdh = useWindowSize()
 
   React.useEffect(() => {
@@ -36,7 +39,13 @@ const HeaderBlock = ({ data }) => {
   })
 
   const handleWindowWidthChange = size => {
-    size < 600 ? setIsResponsive(true) : setIsResponsive(false);
+    if (size < 600) {
+      setIsResponsive(true);
+      blockScroll();
+    } else {
+      setIsResponsive(false);
+      allowScroll();
+    }
   }
 
   return (
