@@ -5,24 +5,26 @@ import { useWindowSize } from "../utils/windowHook"
 import closeimg from '../images/icons/cancel.svg'
 import useScrollBlock from "../utils/useScrollBlock"
 
-const MenuItem = ({ url, label }) => (
-  <div className="menu_item">
-    <Link to={url}>
-      {label}
-    </Link>
-  </div>
-)
+const MenuItem = ({ url, label, allowScroll }) => {
+  return (
+    <div className="menu_item">
+      <Link to={url} onClick={() => allowScroll()}>
+        {label}
+      </Link>
+    </div>
+  )
+}
 
-const MenuResponsive = ({ data, close }) => (
+const MenuResponsive = ({ data, close, allowScroll }) => (
   <div className="menu_responsive_wrapper">
-    <MenuItem url="/" label="All"></MenuItem>
+    <MenuItem url="/" label="All" allowScroll={allowScroll}></MenuItem>
     {
-      data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} ></MenuItem>)
+      data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} allowScroll={allowScroll}></MenuItem>)
     }
     <p>________</p>
-    <MenuItem url="/contact" label="Contact"></MenuItem>
+    <MenuItem url="/contact" label="Contact" allowScroll={allowScroll}></MenuItem>
     <div className="close_wrapper" onClick={() => close()}>
-      <img src={closeimg} alt="fadf" />
+      <img src={closeimg} alt="Close icon" allowScroll={() => allowScroll()} />
     </div>
   </div>
 )
@@ -39,11 +41,16 @@ const HeaderBlock = ({ data }) => {
   })
 
   const handleWindowWidthChange = size => {
-    if (size < 600) {
-      setIsResponsive(true);
+    size < 600 ?
+      setIsResponsive(true) : setIsResponsive(false);
+  }
+
+  const handleOpenMenuResponsive = (state) => {
+    if (state) {
+      setStateMenuRes(state)
       blockScroll();
     } else {
-      setIsResponsive(false);
+      setStateMenuRes(state)
       allowScroll();
     }
   }
@@ -65,8 +72,8 @@ const HeaderBlock = ({ data }) => {
           <p>|</p>
 
           <MenuItem url="/contact" label="Contact"></MenuItem>
-        </div> : stateMenuRes ? <MenuResponsive data={data} close={() => setStateMenuRes(false)}></MenuResponsive>
-          : (<p className="menu_button" onClick={() => setStateMenuRes(true)}>menu</p>)
+        </div> : stateMenuRes ? <MenuResponsive data={data} close={() => handleOpenMenuResponsive(false)} allowScroll={() => allowScroll()}></MenuResponsive>
+          : (<p className="menu_button" onClick={() => handleOpenMenuResponsive(true)}>menu</p>)
       }
     </header>
   )
