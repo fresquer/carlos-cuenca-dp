@@ -27,7 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   result.data.allPrismicVideo.nodes.forEach((res) => {
-    console.log("🚀 ~ file: gatsby-node.js ~ line 22 ~ result.data.allPrismicVideo.nodes.forEach ~ node", res)
     createPage({
       path: `video/${res.uid}`,
       component: path.resolve(`./src/templates/video-detail-template.js`),
@@ -40,7 +39,6 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   result.data.allPrismicCategories.edges.forEach((res) => {
-    console.log("🚀 ~ file: gatsby-node.js ~ line 22 ~ result.data.allPrismicVideo.nodes.forEach ~ node", res)
     createPage({
       path: `category/${res.node.uid}`,
       component: path.resolve(`./src/templates/category-template.js`),
