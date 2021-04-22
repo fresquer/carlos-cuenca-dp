@@ -6,9 +6,15 @@ import closeimg from '../images/icons/cancel.svg'
 import useScrollBlock from "../utils/useScrollBlock"
 
 const MenuItem = ({ url, label, allowScroll }) => {
+  const handleClickIfAllowScroll = () => {
+    if (allowScroll) {
+      allowScroll()
+    }
+  }
+
   return (
     <div className="menu_item">
-      <Link to={url} onClick={() => allowScroll()}>
+      <Link to={url} onClick={() => handleClickIfAllowScroll()}>
         {label}
       </Link>
     </div>
