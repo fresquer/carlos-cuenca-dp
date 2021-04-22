@@ -23,7 +23,7 @@
 
         & p {
             font-family: var(--lato);
-            margin: 16px 0;
+            margin: 8px 0;
             font-size: 1em;
 
             &:first-child {

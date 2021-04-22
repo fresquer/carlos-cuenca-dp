@@ -31,20 +31,6 @@ const ContactPage = ({ data }) => {
             <section className="gallery_wrapper">
                 <GalleryImg gallery={data.prismicVideo.data.gallery}></GalleryImg>
             </section>
-            {/* {
-                    data.prismicVideo.data.gallery.map((item, i) =>
-                    (<div className="gallery_item" key={i}>
-                         <GatsbyImage
-                            loading="lazy"
-                            placeholder="blurred"
-                            alt={'gallery image'}
-                            fluid={
-                                getImage(item.img.fluid)
-                            }
-                        /> 
-                        <img src={item.img.url} alt="" />
-                    </div>))
-                } */}
         </Layout>
     )
 }
