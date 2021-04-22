@@ -13,13 +13,15 @@ const ContactPage = () => (
     <Layout>
         <SEO title="Contact" />
         <div className="contact_wrapper">
-            <StaticImage
-                src="../images/carlos-photo.jpeg"
-                quality={95}
-                formats={["AUTO", "WEBP", "AVIF"]}
-                placeholder="blurred"
-                alt="Carlos on camera"
-            />
+            <div className="img_wrapper">
+                <StaticImage
+                    src="../images/carlos-photo.jpeg"
+                    quality={95}
+                    formats={["AUTO", "WEBP", "AVIF"]}
+                    placeholder="blurred"
+                    alt="Carlos on camera"
+                />
+            </div>
             <div className="info_wrapper">
                 <p>
                     <a href="mailto:carloscuencadp@gmail.com">carloscuencadp@gmail.com</a>
