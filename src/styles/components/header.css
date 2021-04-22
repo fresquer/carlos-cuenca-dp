@@ -33,9 +33,13 @@ header {
     & .menu_wrapper {
         display: flex;
         align-items: center;
-        gap: 24px;
         margin-top: 16px;
+
+        & .menu_item {
+            margin: 0 12px;
+        }
     }
+
 
     & .menu_button {
         font-family: var(--lato);
