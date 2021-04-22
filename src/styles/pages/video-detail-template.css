@@ -25,6 +25,11 @@
             font-family: var(--lato);
             margin: 16px 0;
             font-size: 1em;
+
+            &:first-child {
+                font-weight: bold;
+                margin-right: 8px;
+            }
         }
     }
 
@@ -44,6 +49,7 @@
 
         & img {
             width: 100%;
+            height: auto;
         }
     }
 }

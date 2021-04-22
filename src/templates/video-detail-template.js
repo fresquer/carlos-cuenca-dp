@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -27,7 +28,15 @@ const ContactPage = ({ data }) => {
             <section className="gallery_wrapper">
                 {
                     data.prismicVideo.data.gallery.map((item, i) =>
-                    (<div className="info_item" key={i}>
+                    (<div className="gallery_item" key={i}>
+                        {/* <GatsbyImage
+                            loading="lazy"
+                            placeholder="blurred"
+                            alt={'gallery image'}
+                            fluid={
+                                getImage(item.img.fluid)
+                            }
+                        /> */}
                         <img src={item.img.url} alt="" />
                     </div>))
                 }
@@ -57,6 +66,9 @@ export const query = graphql`
         gallery {
             img {
             url
+            fluid(maxWidth: 800) {
+            ...GatsbyPrismicImageFluid
+                }
             }
         }
         cover {
@@ -64,7 +76,6 @@ export const query = graphql`
         }
         video
         }
-        
     }
     }
 `
