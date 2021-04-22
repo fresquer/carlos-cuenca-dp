@@ -9,6 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { preloadFontList } from "../utils/preloadFontList"
 
 function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
@@ -90,7 +91,12 @@ function SEO({ description, lang, meta, title, image }) {
           content: `Zubi Labs Img`,
         },
       ].concat(meta)}
-    />
+
+    >
+      {
+        preloadFontList.map(item => <link rel="prefetch" href={item.path} crossorigin="anonymous" as="fetch"></link>)
+      }
+    </Helmet>
   )
 }
 
@@ -106,5 +112,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
+
+
 
 export default SEO
