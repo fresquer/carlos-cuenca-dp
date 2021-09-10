@@ -94,7 +94,7 @@ function SEO({ description, lang, meta, title, image }) {
 
     >
       {
-        preloadFontList.map(item => <link rel="prefetch" href={item.path} crossorigin="anonymous" as="fetch"></link>)
+        preloadFontList.map((item, i) => <link rel="prefetch" href={item.path} crossorigin="anonymous" as="fetch" key={i}></link>)
       }
     </Helmet>
   )

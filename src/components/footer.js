@@ -1,6 +1,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+
+import insta from '../images/icons/instagram.svg';
+import vimeo from '../images/icons/vimeo.svg';
 
 const Footer = ({ siteTitle }) => (
     <footer>
@@ -9,10 +11,10 @@ const Footer = ({ siteTitle }) => (
         </div>
         <div className="rrss_wrapper">
             <a href="https://www.instagram.com/ccuencam/">
-                <img src="https://carloscuencadp.com/wp-content/uploads/2020/11/002-instagram.svg" alt="insta" />
+                <img src={insta} alt="insta" />
             </a>
             <a href="https://vimeo.com/carloscuencadp">
-                <img src="https://carloscuencadp.com/wp-content/uploads/2020/11/001-vimeo.svg" alt="vimeo" />
+                <img src={vimeo} alt="vimeo" />
             </a>
         </div>
     </footer>

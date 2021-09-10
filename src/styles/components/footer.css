@@ -5,11 +5,13 @@ footer {
         display: flex;
         justify-content: center;
 
-        & p {
+        & p, & a {
             margin-bottom: 16px;
             text-align: center;
-            font-family: 'coolvetica rg';
-            letter-spacing: 3px;
+            font-family: var(--lato);
+        }
+        & p {
+            font-weight: bold;
         }
     }
 
@@ -24,8 +26,7 @@ footer {
             transition: all .4s ease-in;
 
             & :hover {
-                opacity: .4;
-            }
+                opacity: .4;            }
         }
     }
 }

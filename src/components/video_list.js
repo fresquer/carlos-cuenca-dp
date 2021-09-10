@@ -5,7 +5,7 @@ const VideoList = ({ data }) => {
     return (
         <div className="video_list_wrapper">
             {
-                data.map((item, i) => <VideoListItem data={item} key={i}></VideoListItem>)
+                data.map((item, i) => <VideoListItem data={item} key={i + 'video'}></VideoListItem>)
             }
         </div>
     )
