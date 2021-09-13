@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import VideoList from "../components/video_list"
 
 const IndexPage = ({ data }) => {
-  console.log("🚀 ~ file: index.js ~ line 9 ~ IndexPage ~ data", data)
   return (
     <Layout>
       <SEO title="Home" />
@@ -26,6 +25,7 @@ query FilteredList {
           document {
             ... on PrismicVideo {
               id
+              uid
               data {
                 titulo {
                   text
@@ -37,7 +37,6 @@ query FilteredList {
                   slug
                 }
               }
-              uid
             }
           }
         }

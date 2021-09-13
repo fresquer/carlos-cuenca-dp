@@ -9,12 +9,6 @@ const VideoListItem = ({ data }) => {
             <Link to={'/video/' + dataVideo.uid}>
                 <div className="video_item_wrapper">
                     <div className="img_wrapper">
-                        {/* <GatsbyImage
-                            loading="lazy"
-                            placeholder="blurred"
-                            fluid={
-                                getImage(dataVideo.data.cover.fluid)
-                            } alt={'dafd'} /> */}
                         <img src={dataVideo.data.cover.url} alt="" />
                     </div>
                     <div className="overlay">
