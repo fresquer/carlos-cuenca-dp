@@ -27,6 +27,7 @@ const ContactPage = ({ data }) => {
                         <p>{item.nombre.text}</p>
                     </div>))
                 }
+
             </section>
             <section className="gallery_wrapper">
                 <GalleryImg gallery={data.prismicVideo.data.gallery}></GalleryImg>

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const VideoListItem = ({ data }) => {
-    const dataVideo = data.node;
+    const dataVideo = data;
     return (
         <div className="video_list_item_wrapper">
             <Link to={'/video/' + dataVideo.uid}>

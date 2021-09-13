@@ -23,7 +23,7 @@ const MenuItem = ({ url, label, allowScroll }) => {
 
 const MenuResponsive = ({ data, close, allowScroll }) => (
   <div className="menu_responsive_wrapper">
-    <MenuItem url="/" label="All" allowScroll={allowScroll}></MenuItem>
+    {/* <MenuItem url="/" label="All" allowScroll={allowScroll}></MenuItem> */}
     {
       data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} allowScroll={allowScroll}></MenuItem>)
     }
@@ -71,7 +71,7 @@ const HeaderBlock = ({ data }) => {
       </div>
       {
         !isResponsive ? <div className="menu_wrapper">
-          <MenuItem url="/" label="All"></MenuItem>
+          {/* <MenuItem url="/" label="All"></MenuItem> */}
           {
             data.allPrismicCategories.edges.map(item => <MenuItem url={`/category/${item.node.uid}`} label={item.node.data.name} key={item.node.data.name} ></MenuItem>)
           }
