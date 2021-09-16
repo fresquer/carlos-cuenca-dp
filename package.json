@@ -27,11 +27,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-image-lightbox": "^5.1.4",
-    "postcss-normalize": "^9.0.0"
+    "react-image-lightbox": "^5.1.4"
   },
   "devDependencies": {
-    "postcss-normalize": "^9.0.0",
     "prettier": "2.2.1"
   },
   "keywords": [
