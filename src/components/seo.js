@@ -12,19 +12,40 @@ import { useStaticQuery, graphql } from "gatsby"
 import { preloadFontList } from "../utils/preloadFontList"
 
 function SEO({ description, lang, meta, title, image }) {
-  const { site } = useStaticQuery(
+  const { site, prismicHome } = useStaticQuery(
     graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
+      {
+  site {
+    siteMetadata {
+      title
+      description
+      author
+    }
+  }
+        prismicHome {
+          data {
+            videos_list {
+              video {
+                document {
+                  ... on PrismicVideo {
+                    id
+                    uid
+                    data {
+                      cover {
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     `
   )
+
+  const converImage = prismicHome.data.videos_list[0].video.document.data.cover.url;
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
@@ -71,11 +92,11 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: `og:image`,
-          content: image ? image : "",
+          content: image ? image : converImage,
         },
         {
           property: `twitter:image`,
-          content: image ? image : "",
+          content: image ? image : converImage,
         },
         {
           property: `og:image:width`,
