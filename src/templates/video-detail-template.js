@@ -9,12 +9,14 @@ import SEO from "../components/seo"
 import { GalleryImg } from "../components/gallery-img";
 
 const ContactPage = ({ data }) => {
+    const isYoutube = data.prismicVideo.data.youtube_video;
     return (
         <Layout mainId="video_detail_page_wrapper">
             <SEO title={data.prismicVideo.data.titulo.text} image={data.prismicVideo.data.cover.url} />
-            <section className="video_wrapper">
+            <section className={`video_wrapper`}>
                 <div
                     id="html_wrapper"
+                    className={`${isYoutube && 'youtube'}`}
                     dangerouslySetInnerHTML={{ __html: data.prismicVideo.data.video }}
                 />
             </section>
@@ -27,7 +29,6 @@ const ContactPage = ({ data }) => {
                         <p>{item.nombre.text}</p>
                     </div>))
                 }
-
             </section>
             <section className="gallery_wrapper">
                 <GalleryImg gallery={data.prismicVideo.data.gallery}></GalleryImg>
@@ -42,7 +43,7 @@ export const query = graphql`
     prismicVideo(uid: {eq: $slug}) {
         uid
         data {
-                    
+        youtube_video      
         titulo {
             text
         }

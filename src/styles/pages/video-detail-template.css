@@ -11,11 +11,17 @@
             width: 100%;
             max-width: 700px;
         }
+        
+        & #html_wrapper.youtube {
+            display: flex;
+            justify-content: center;
+        }
 
         & iframe {
             max-width: 100%;
         }
     }
+
 
     & .info_item {
         display: flex;
