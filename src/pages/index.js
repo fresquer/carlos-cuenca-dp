@@ -8,7 +8,7 @@ import VideoList from "../components/video_list"
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Carlos Cuenca Cinematographer" />
       <VideoList data={data.prismicHome.data.videos_list}></VideoList>
     </Layout>
   )
