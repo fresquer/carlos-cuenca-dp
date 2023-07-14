@@ -6,15 +6,11 @@ import SEO from "../components/seo"
 import VideoList from "../components/video_list"
 
 const CategoryPage = ({ data, pageContext }) => {
-  console.log("🚀 ~ file: category-template.js ~ line 9 ~ CategoryPage ~ data", data)
-  console.log("🚀 ~ file: category-template.js ~ line 9 ~ CategoryPage ~ pageContext", pageContext)
-
   const [videoListFiltered, setFilter] = React.useState([]);
-
   React.useEffect(() => {
     const final = data.prismicHome.data.videos_list
       .filter(item => item.video.document)
-      .filter(item2 => pageContext.slug === item2.video.document.data.category.slug)
+      .filter(item2 => pageContext.slug === item2.video.document.data?.category?.slug)
     setFilter(final);
   }, [])
 

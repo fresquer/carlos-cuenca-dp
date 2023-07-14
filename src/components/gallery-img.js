@@ -10,14 +10,6 @@ export const GalleryImg = ({ gallery }) => {
             {
                 gallery.map((item, i) =>
                 (<div className="gallery_item" key={i}>
-                    {/* <GatsbyImage
-                            loading="lazy"
-                            placeholder="blurred"
-                            alt={'gallery image'}
-                            fluid={
-                                getImage(item.img.fluid)
-                            }
-                        /> */}
                     <img src={item.img.url} onClick={() => { setIsOpen(true); setPhotoIndex(i) }} alt="image" />
                 </div>))
             }

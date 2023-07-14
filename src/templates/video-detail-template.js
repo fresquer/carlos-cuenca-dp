@@ -1,7 +1,5 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
 import Layout from "../components/layout"
@@ -58,9 +56,6 @@ export const query = graphql`
         gallery {
             img {
             url
-            fluid(maxWidth: 800) {
-            ...GatsbyPrismicImageFluid
-                }
             }
         }
         cover {
