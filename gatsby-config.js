@@ -37,7 +37,6 @@ module.exports = {
       options: {
         repositoryName: 'carlos-cuenca-dp',
         // accessToken: 'example-access-token',
-        linkResolver: () => linkResolver,
         fetchLinks: [],
         htmlSerializer: ({ node, key, value }) => (
           type,
